@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean class="com.kardi.test.java.training.SpringContext" />
+
+       <!-- можно прайват конструкторы -->
+       <bean id="test" class="com.kardi.test.java.training.Test">
+              <!-- Только паблики -->
+              <property name="variable" value="7" />
+       </bean>
+
+
+</beans>
