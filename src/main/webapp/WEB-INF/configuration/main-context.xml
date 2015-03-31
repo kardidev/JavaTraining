@@ -4,13 +4,32 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       <bean class="com.kardi.test.java.training.SpringContext" />
 
-       <!-- можно прайват конструкторы -->
-       <bean id="test" class="com.kardi.test.java.training.Test">
-              <!-- Только паблики -->
-              <property name="variable" value="7" />
-       </bean>
+  <!-- ############## SINGLETONS ############## -->
 
+  <!-- экземпляр создается сразу при загрузке контекста, т.к. это синглтон -->
+  <bean class="com.kardi.test.java.training.SpringContext"/>
+
+  <!-- Спринг способен создавать экземпляры бинов даже с прайват конструкторами -->
+  <!-- экземпляр создается сразу при загрузке контекста -->
+  <bean id="singleton-test" class="com.kardi.test.java.training.beans.singletons.SingletonTest">
+    <!-- но сеттеры могут быть только пабликами -->
+    <property name="variable" value="7"/>
+  </bean>
+
+  <!-- ############## PROTOTYPES ############## -->
+
+  <!-- Экземпляр не используемого прототипа не создается при загрузке контекста -->
+  <bean id="unused-prototype" class="com.kardi.test.java.training.beans.prototypes.UnusedPrototype" scope="prototype" />
+
+  <bean id="working-prototype" class="com.kardi.test.java.training.beans.prototypes.WorkingPrototype" scope="prototype" />
+
+  <bean id="prototypes-user1" class="com.kardi.test.java.training.beans.prototypes.PrototypesUser">
+    <constructor-arg ref="working-prototype"/>
+  </bean>
+
+  <bean id="prototypes-user2" class="com.kardi.test.java.training.beans.prototypes.PrototypesUser">
+    <constructor-arg ref="working-prototype"/>
+  </bean>
 
 </beans>
