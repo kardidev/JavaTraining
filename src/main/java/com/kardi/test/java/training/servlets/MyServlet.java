@@ -64,7 +64,7 @@ public class MyServlet extends HttpServlet {
             getServletContext().getRequestDispatcher();
          */
 
-        RequestDispatcher rd = req.getRequestDispatcher("jsp/index.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/jsp/index.jsp");
         rd.forward(req, resp);
     }
 }
