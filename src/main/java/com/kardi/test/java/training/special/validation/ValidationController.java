@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
+ * JSR-303 Bean Validation
+ *
  * Created by m.lysenchuk on 4/15/15.
  */
 

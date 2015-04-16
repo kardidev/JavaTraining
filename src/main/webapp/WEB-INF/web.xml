@@ -41,4 +41,16 @@
     <url-pattern>/spring/*</url-pattern>
   </servlet-mapping>
 
+  <!-- Restful Servlet -->
+  <servlet>
+    <servlet-name>JerseyServlet</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JerseyServlet</servlet-name>
+    <url-pattern>/restful/*</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
